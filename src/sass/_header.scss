@@ -1,0 +1,248 @@
+.header {
+  grid-area: head;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    margin-left: 4rem;
+    height: 4.6rem;
+    // color: #fff;
+    border-radius: 32px;
+    // background-color: #fff;
+    display: block;
+  }
+}
+
+.search {
+  background-color: #f5f5f5e5;
+  border-radius: 10rem;
+  display: flex;
+  align-items: center;
+  padding-left: 3rem;
+  transition: all 0.3s;
+
+  &:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 0.7rem 3rem rgba($color-grey-dark-1, 0.08);
+  }
+
+  &__field {
+    border: none;
+    background: none;
+    font-family: inherit;
+    color: #1e1e1e;
+    font-size: 1.7rem;
+    width: 30rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $color-grey-light-3;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 50px;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-family: inherit;
+  }
+}
+@media only screen and (max-width: $bp-small) {
+  // .header {
+  //   width: 1500px;
+  // }
+  // .container {
+  //   // position: absolute;
+  //   // left: 100px;
+  // }
+  .recipe {
+    position: absolute;
+    width: 300px;
+    top: 80px;
+    left: 170px;
+  }
+  .nav__btn--add-recipe {
+    // position: absolute;
+    right: 0px;
+    // top: 100px;
+    width: 50px;
+  }
+  .nav__item {
+    right: -340px;
+  }
+  .nav__item .text {
+    position: absolute;
+    z-index: 10;
+    display: none;
+  }
+  .nav__btn--add-recipe svg {
+    position: absolute;
+    right: 0;
+    display: inherit;
+    // left: 100px;
+    // z-index: 100000000000000;
+  }
+  .recipe__details {
+    width: 300px;
+    height: 200px;
+    // background-color: aqua;
+  }
+  .recipe__info {
+    display: flex;
+    position: relative;
+    left: -50px;
+    margin-right: -4.5rem;
+    align-items: self-start;
+    width: 60px;
+    padding: -150px;
+    // background-color: aqua;
+  }
+  // .recipe__info {
+  // padding: 7.5rem 8rem 3.5rem 0;
+  // position: absolute;
+  // margin-right: -1rem;
+  // }
+  // .btn--bookmark {
+  // }
+  // .recipe__ingredients {
+  //   position: absolute;
+  //   top: 400px;
+  // }
+  // .recipe__directions {
+  //   position: absolute;
+  //   top: 700px;
+  // }
+  .search {
+    height: 40px;
+    width: 150px;
+
+    position: absolute;
+    left: 150px;
+  }
+  .header__logo {
+    position: absolute;
+    left: -30px;
+    width: 100px;
+  }
+  .search__btn span {
+    display: none;
+    width: 70px;
+  }
+  .search__btn {
+    width: 50px;
+    position: absolute;
+    left: 100px;
+    height: 40px;
+    padding: 10px;
+  }
+  .search__btn svg {
+    position: absolute;
+    // right: 100px;
+    margin-left: -10px;
+    width: 50px;
+  }
+  .recipe__fig {
+    // max-width: 300px;
+    display: flex;
+  }
+}
+.nav {
+  align-self: stretch;
+  margin-right: 2.5rem;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__btn {
+    height: 100%;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    transition: all 0.3s;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 2.4rem;
+      width: 2.4rem;
+      fill: $color-primary;
+      margin-right: 0.7rem;
+      transform: translateY(-1px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-2;
+      color: #000;
+    }
+  }
+}
+
+.bookmarks {
+  padding: 1rem 0;
+  position: absolute;
+  // right: 0;
+  right: -2.5rem;
+  z-index: 10;
+  width: 40rem;
+  background-color: #fff;
+  box-shadow: 0 0.8rem 5rem 2rem rgba($color-grey-dark-1, 0.1);
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__field {
+    cursor: pointer;
+    padding: 0 4rem;
+
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &:hover,
+  .nav__btn--bookmarks:hover + & {
+    visibility: visible;
+    opacity: 1;
+    background-color: #1e1e1e;
+    color: #1e1e1e;
+  }
+}
