@@ -11,15 +11,6 @@ import 'regenerator-runtime/runtime';
 import searchView from './views/searchView.js';
 import bookmarksView from './views/bookmarksView.js';
 
-// const recipeContainer = document.querySelector('.recipe');
-
-// https://forkify-api.jonas.io
-
-///////////////////////////////////////
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 // renderSpinner();
 const controlRecipes = async function () {
   try {
@@ -137,9 +128,6 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
-const newFeature = function () {
-  console.log('welcome to the app');
-};
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
   recipeView.addHandlerRender(controlRecipes);
@@ -148,7 +136,6 @@ const init = function () {
   searchView.addHandlersearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature();
 };
 init();
 
